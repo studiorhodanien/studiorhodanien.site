@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Nom du Projet] - Studio Rhôdanien</title>
+  <meta name="description" content="Découvrez le projet [Nom du Projet] créé par Studio Rhôdanien.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .project-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+      align-items: center;
+      margin-bottom: var(--spacing-2xl);
+    }
+
+    .project-hero-image {
+      width: 100%;
+      border: 2px solid var(--color-gold);
+    }
+
+    .project-meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+
+    .project-stat {
+      border-left: 4px solid var(--color-gold);
+      padding-left: var(--spacing-lg);
+    }
+
+    .project-stat-number {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--color-gold);
+      font-weight: 700;
+    }
+
+    .project-stat-label {
+      color: var(--color-grey);
+      font-size: 0.9rem;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-lg);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .before-after-item {
+      border: 2px solid var(--color-gold);
+    }
+
+    .before-after-label {
+      background-color: var(--color-bordeaux);
+      color: var(--color-creme-light);
+      padding: var(--spacing-sm) var(--spacing-lg);
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .before-after-image {
+      width: 100%;
+      display: block;
+    }
+
+    .project-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-lg);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .feature-tag {
+      background-color: var(--color-creme-dark);
+      border: 1px solid var(--color-gold);
+      padding: var(--spacing-md) var(--spacing-lg);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .project-header {
+        grid-template-columns: 1fr;
+      }
+
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Studio Rhôdanien</div>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="process.html">Notre Procédé</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PROJECT TITLE & OVERVIEW -->
+    <section>
+      <div class="container">
+        <a href="portfolio.html" style="color: var(--color-teal); margin-bottom: var(--spacing-lg); display: inline-block;">← Retour au portfolio</a>
+
+        <div class="project-header">
+          <div>
+            <h1>[Nom du Projet]</h1>
+            <p class="eyebrow">[Catégorie]</p>
+            <p style="font-size: 1.1rem; color: var(--color-grey);">[Description courte du projet et de ce qu'on a accompli]</p>
+          </div>
+          <img src="https://via.placeholder.com/500x400?text=Project+Image" alt="[Nom du Projet]" class="project-hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS / METRICS -->
+    <section>
+      <div class="container">
+        <h2>L'impact</h2>
+        <div class="grid grid-4">
+          <div class="project-stat">
+            <div class="project-stat-number">+XX%</div>
+            <div class="project-stat-label">Augmentation du trafic</div>
+          </div>
+          <div class="project-stat">
+            <div class="project-stat-number">XX</div>
+            <div class="project-stat-label">Leads générés (mois 1)</div>
+          </div>
+          <div class="project-stat">
+            <div class="project-stat-number">XX%</div>
+            <div class="project-stat-label">Taux de conversion</div>
+          </div>
+          <div class="project-stat">
+            <div class="project-stat-number">X.Xs</div>
+            <div class="project-stat-label">Temps de chargement</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVANT / APRÈS -->
+    <section>
+      <div class="container">
+        <h2>Avant & Après</h2>
+        <div class="before-after">
+          <div class="before-after-item">
+            <div class="before-after-label">Avant</div>
+            <img src="https://via.placeholder.com/400x300?text=Avant" alt="Avant" class="before-after-image">
+          </div>
+          <div class="before-after-item">
+            <div class="before-after-label">Après</div>
+            <img src="https://via.placeholder.com/400x300?text=Après" alt="Après" class="before-after-image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES & SOLUTIONS -->
+    <section>
+      <div class="container">
+        <h2>Solutions & Fonctionnalités</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>🎯 Stratégie</h3>
+            <p>[Description de la stratégie adoptée pour ce projet, les défis identifiés, comment on a pensé la solution]</p>
+          </div>
+          <div>
+            <h3>🔧 Technique</h3>
+            <p>[Stack technique utilisée, performances optimisées, intégrations particulières]</p>
+          </div>
+          <div>
+            <h3>🎨 Design</h3>
+            <p>[Parti pris de design, cohérence avec la marque, UX pensée]</p>
+          </div>
+          <div>
+            <h3>📈 Résultats</h3>
+            <p>[Résultats concrets mesurables après le lancement, feedback client]</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: var(--spacing-2xl);">Fonctionnalités clés</h3>
+        <div class="project-features">
+          <div class="feature-tag">[Fonctionnalité 1]</div>
+          <div class="feature-tag">[Fonctionnalité 2]</div>
+          <div class="feature-tag">[Fonctionnalité 3]</div>
+          <div class="feature-tag">[Fonctionnalité 4]</div>
+          <div class="feature-tag">[Fonctionnalité 5]</div>
+          <div class="feature-tag">[Fonctionnalité 6]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL CLIENT -->
+    <section>
+      <div class="container">
+        <h2>L'avis du client</h2>
+        <div class="testimonial" style="margin: var(--spacing-xl) 0; font-size: 1.1rem;">
+          <p>"[Avis détaillé du client sur le projet, son expérience de collaboration, l'impact du site sur son business]"</p>
+          <div class="testimonial-author">— [Nom], [Titre], [Entreprise]</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY / SCREENSHOTS -->
+    <section>
+      <div class="container">
+        <h2>Galerie du projet</h2>
+        <div class="grid grid-2">
+          <img src="https://via.placeholder.com/500x400?text=Screenshot+1" alt="Screenshot 1" style="border: 2px solid var(--color-gold);">
+          <img src="https://via.placeholder.com/500x400?text=Screenshot+2" alt="Screenshot 2" style="border: 2px solid var(--color-gold);">
+          <img src="https://via.placeholder.com/500x400?text=Screenshot+3" alt="Screenshot 3" style="border: 2px solid var(--color-gold);">
+          <img src="https://via.placeholder.com/500x400?text=Screenshot+4" alt="Screenshot 4" style="border: 2px solid var(--color-gold);">
+        </div>
+      </div>
+    </section>
+
+    <!-- LIEN VERS LE SITE LIVE -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2>Voir le site en action</h2>
+        <p>Découvrez le site live et explorez toutes les fonctionnalités</p>
+        <div class="cta-section">
+          <a href="https://[project-url].com" target="_blank" class="btn btn-primary">Visiter le site →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS SIMILAIRES -->
+    <section>
+      <div class="container">
+        <h2>Autres projets similaires</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+A" alt="Projet A">
+            <div class="portfolio-overlay">
+              <h3>[Nom]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=A" class="btn">Voir</a>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+B" alt="Projet B">
+            <div class="portfolio-overlay">
+              <h3>[Nom]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=B" class="btn">Voir</a>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+C" alt="Projet C">
+            <div class="portfolio-overlay">
+              <h3>[Nom]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=C" class="btn">Voir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA CONTACT -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2>Vous avez un projet similaire ?</h2>
+        <div class="cta-section">
+          <a href="contact.html" class="btn btn-primary">Parlez-nous de votre projet</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Studio Rhôdanien</h3>
+        <p>Sites web hand-coded pour professionnels et petites entreprises.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens</h3>
+        <ul style="list-style: none;">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="process.html">Notre Procédé</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> [email@domain.com]</p>
+        <p><strong>Tél:</strong> [+33 X XX XX XX XX]</p>
+        <p><strong>Lieu:</strong> Vienne, France</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux</h3>
+        <ul style="list-style: none;">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Studio Rhôdanien. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="cgu.html">CGU</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

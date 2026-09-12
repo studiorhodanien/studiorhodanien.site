@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charte Graphique - Studio Rhôdanien</title>
+  <meta name="description" content="Découvrez la charte graphique et l'identité visuelle de Studio Rhôdanien.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .color-swatch {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      border: 2px solid var(--color-gold);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .color-name {
+      font-weight: 600;
+      color: var(--color-texte);
+    }
+
+    .color-hex {
+      font-family: 'Inter', monospace;
+      font-size: 0.9rem;
+      color: var(--color-grey);
+    }
+
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .font-sample {
+      background: var(--color-creme-dark);
+      border: 2px solid var(--color-gold);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .font-display {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--color-bordeaux-f);
+      margin-bottom: 1rem;
+    }
+
+    .font-sans {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--color-texte);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .font-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-teal);
+    }
+
+    .logo-section {
+      background: var(--color-bordeaux-f);
+      color: var(--color-blanc);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .logo-container {
+      background: var(--color-blanc);
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      display: inline-block;
+      min-width: 200px;
+    }
+
+    .logo-img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    .ratio-bar {
+      display: flex;
+      height: 60px;
+      margin: 2rem 0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .ratio-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .usage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .usage-card {
+      background: var(--color-creme-dark);
+      border-left: 4px solid var(--color-gold);
+      padding: 1.5rem;
+      border-radius: 8px;
+    }
+
+    .usage-card h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .usage-card p {
+      margin: 0.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .font-display {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Studio Rhôdanien</div>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="process.html">Notre Procédé</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Charte Graphique</h1>
+        <p>L'identité visuelle de Studio Rhôdanien — couleurs, typographie, logo et principes de design</p>
+      </div>
+    </section>
+
+    <!-- LOGO -->
+    <section>
+      <div class="container">
+        <div class="logo-section">
+          <h2 style="color: var(--color-blanc); margin-top: 0;">Le Logo</h2>
+          <div class="logo-container">
+            <img src="https://via.placeholder.com/200x100?text=Studio+Rhodanien+Logo" alt="Logo Studio Rhôdanien" class="logo-img">
+          </div>
+          <h3 style="color: var(--color-gold);">Description du Logo</h3>
+          <p style="max-width: 600px; margin: 1rem auto; line-height: 1.8;">
+            Le logo de Studio Rhôdanien incarne l'élégance et la précision. Composé d'une typographie manuscrite (Great Vibes) associée à un symbole géométrique minimaliste, il reflète notre approche : créer des designs sur mesure, élégants et fonctionnels. Les couleurs primaires (bordeaux et or) renforcent l'identité premium et professionnelle de notre agence.
+          </p>
+          <p style="color: var(--color-gold-clair);">
+            <strong>Utilisation :</strong> Le logo doit toujours apparaître avec son fond dédié ou sur un fond blanc/crème pour garantir une bonne lisibilité.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COULEURS -->
+    <section>
+      <div class="container">
+        <h2>Palette de Couleurs</h2>
+        <p class="intro">Une palette harmonieuse composée de couleurs primaires, secondaires et neutres pour toutes les applications.</p>
+
+        <h3>Couleurs Primaires</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box" style="background: #4B0F1E;"></div>
+            <div class="color-name">Bordeaux Foncé</div>
+            <div class="color-hex">#4B0F1E</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background: #C98C49;"></div>
+            <div class="color-name">Or</div>
+            <div class="color-hex">#C98C49</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background: #0A575D;"></div>
+            <div class="color-name">Teal</div>
+            <div class="color-hex">#0A575D</div>
+          </div>
+        </div>
+
+        <h3>Couleurs Secondaires</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box" style="background: #701424;"></div>
+            <div class="color-name">Bordeaux</div>
+            <div class="color-hex">#701424</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background: #DD9E51;"></div>
+            <div class="color-name">Or Clair</div>
+            <div class="color-hex">#DD9E51</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background: #A05E30;"></div>
+            <div class="color-name">Bronze</div>
+            <div class="color-hex">#A05E30</div>
+          </div>
+        </div>
+
+        <h3>Couleurs Neutres</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div class="color-box" style="background: #FCF8F2;"></div>
+            <div class="color-name">Crème Clair</div>
+            <div class="color-hex">#FCF8F2</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background: #F2E3D0;"></div>
+            <div class="color-name">Crème</div>
+            <div class="color-hex">#F2E3D0</div>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background: #8a7d76;"></div>
+            <div class="color-name">Gris</div>
+            <div class="color-hex">#8a7d76</div>
+          </div>
+        </div>
+
+        <h3>Ratio de Couleurs</h3>
+        <p class="intro">Distribution recommandée des couleurs dans les compositions :</p>
+        <div class="ratio-bar">
+          <div class="ratio-box" style="width: 50%; background: #4B0F1E;">50% Bordeaux</div>
+          <div class="ratio-box" style="width: 25%; background: #C98C49;">25% Or</div>
+          <div class="ratio-box" style="width: 15%; background: #F2E3D0; color: #3a2e2a;">15% Crème</div>
+          <div class="ratio-box" style="width: 10%; background: #0A575D;">10% Teal</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TYPOGRAPHIE -->
+    <section>
+      <div class="container">
+        <h2>Typographie</h2>
+        <p class="intro">Trois polices soigneusement sélectionnées pour une harmonie visuelle optimale.</p>
+
+        <h3>Great Vibes — Titres & Display</h3>
+        <div class="font-sample">
+          <div class="font-display">Studio Rhôdanien</div>
+          <p style="font-size: 0.9rem; color: var(--color-grey);">
+            <strong>Usage :</strong> H1, H2, H3, logo-texte, chiffres clés, accents importants<br>
+            <strong>Graisse :</strong> 700 (bold)<br>
+            <strong>Caractéristique :</strong> Police manuscrite élégante et professionnelle
+          </p>
+        </div>
+
+        <h3>Inter — Corps du Texte</h3>
+        <div class="font-sample">
+          <div class="font-sans">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Des sites web hand-coded, performants et pensés pour convertir. Pas de templates. Pas de WordPress. Juste du custom.
+          </div>
+          <p style="font-size: 0.9rem; color: var(--color-grey);">
+            <strong>Usage :</strong> Corps de texte, descriptions, paragraphes<br>
+            <strong>Graisses :</strong> 400 (regular), 500 (medium), 600 (semibold)<br>
+            <strong>Caractéristique :</strong> Sans-serif géométrique, très lisible à petite taille
+          </p>
+        </div>
+
+        <h3>Montserrat — Labels & Accents</h3>
+        <div class="font-sample">
+          <div class="font-label">Taglines • Petits Textes • Labels</div>
+          <p style="font-size: 0.9rem; color: var(--color-grey);">
+            <strong>Usage :</strong> Eyebrow, labels, petits titres en majuscules<br>
+            <strong>Graisse :</strong> 600 (semibold)<br>
+            <strong>Caractéristique :</strong> Géométrique précis, parfait pour l'emphasis
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPES -->
+    <section>
+      <div class="container">
+        <h2>Principes de Design</h2>
+
+        <div class="usage-grid">
+          <div class="usage-card">
+            <h3>Minimalisme</h3>
+            <p>Chaque élément a un but. Pas de décoration superflue. La simplicité crée la clarté.</p>
+          </div>
+          <div class="usage-card">
+            <h3>Élégance</h3>
+            <p>Les couleurs chaudes (or, bordeaux) associées à l'espace blanc créent une atmosphère premium.</p>
+          </div>
+          <div class="usage-card">
+            <h3>Précision</h3>
+            <p>Les grilles, les ratios et les espacements sont définis pour garantir une cohérence visuelle.</p>
+          </div>
+          <div class="usage-card">
+            <h3>Accessibilité</h3>
+            <p>Tous les contrastes respectent les normes WCAG AAA pour une lisibilité optimale.</p>
+          </div>
+          <div class="usage-card">
+            <h3>Progressivité</h3>
+            <p>La hiérarchie visuelle guide l'utilisateur à travers le contenu sans le surcharger.</p>
+          </div>
+          <div class="usage-card">
+            <h3>Cohérence</h3>
+            <p>La même logique de design s'applique partout — de la homepage à chaque page de projet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2>Besoin d'un site qui respecte cette charte ?</h2>
+        <p>Parlons de votre projet et créons quelque chose d'unique ensemble.</p>
+        <div class="cta-section">
+          <a href="contact.html" class="btn btn-primary">Contacter Studio Rhôdanien</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Studio Rhôdanien</h3>
+        <p>Sites web hand-coded pour professionnels et petites entreprises.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens</h3>
+        <ul style="list-style: none;">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="process.html">Notre Procédé</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="charte-graphique.html">Charte Graphique</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> [email@domain.com]</p>
+        <p><strong>Tél:</strong> [+33 X XX XX XX XX]</p>
+        <p><strong>Lieu:</strong> Vienne, France</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux</h3>
+        <ul style="list-style: none;">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Studio Rhôdanien. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="cgu.html">CGU</a> | <a href="charte-graphique.html">Charte Graphique</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

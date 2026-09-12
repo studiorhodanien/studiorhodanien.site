@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Studio Rhôdanien</title>
+  <meta name="description" content="Prenez contact avec nous. Discutons de votre projet web.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+      align-items: start;
+    }
+
+    .contact-info {
+      background-color: var(--color-bordeaux);
+      color: var(--color-creme-light);
+      padding: var(--spacing-2xl);
+      border: 2px solid var(--color-gold);
+    }
+
+    .contact-info h3 {
+      color: var(--color-gold);
+    }
+
+    .contact-info p {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-method {
+      margin-bottom: var(--spacing-xl);
+      padding-bottom: var(--spacing-xl);
+      border-bottom: 1px solid var(--color-gold);
+    }
+
+    .contact-method:last-child {
+      border-bottom: none;
+    }
+
+    .contact-method a {
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Studio Rhôdanien</div>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="process.html">Notre Procédé</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Parlons de Votre Projet</h1>
+        <p>On est à l'écoute. Partagez vos idées, vos défis, vos rêves pour votre site web.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section>
+      <div class="container">
+        <div class="contact-wrapper">
+          <div>
+            <h2>Envoyez-nous un message</h2>
+            <form>
+              <div class="form-group">
+                <label for="name">Votre nom *</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Votre email *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="company">Entreprise / Organisation</label>
+                <input type="text" id="company" name="company">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+
+              <div class="form-group">
+                <label for="type">Type de projet *</label>
+                <select id="type" name="type" required>
+                  <option value="">-- Sélectionnez --</option>
+                  <option value="site-vitrine">Site vitrine</option>
+                  <option value="e-commerce">E-commerce</option>
+                  <option value="portfolio">Portfolio</option>
+                  <option value="application">Application web</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Budget estimé</label>
+                <select id="budget" name="budget">
+                  <option value="">-- Sélectionnez --</option>
+                  <option value="budget-1">Moins de 2 000 €</option>
+                  <option value="budget-2">2 000 - 5 000 €</option>
+                  <option value="budget-3">5 000 - 10 000 €</option>
+                  <option value="budget-4">10 000 - 20 000 €</option>
+                  <option value="budget-5">20 000+ €</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Décrivez votre projet *</label>
+                <textarea id="message" name="message" required placeholder="Parlez-nous de votre projet, vos objectifs, vos défis..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="timeline">Quand commencer ? *</label>
+                <select id="timeline" name="timeline" required>
+                  <option value="">-- Sélectionnez --</option>
+                  <option value="urgent">ASAP (moins d'1 mois)</option>
+                  <option value="soon">Bientôt (1-2 mois)</option>
+                  <option value="flexible">Flexible (3+ mois)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: var(--spacing-md); font-size: 1rem;">Envoyer mon projet</button>
+            </form>
+          </div>
+
+          <div class="contact-info">
+            <h3>Autres Façons de Nous Contacter</h3>
+
+            <div class="contact-method">
+              <h4 style="margin-bottom: 0.5rem;">Email</h4>
+              <a href="mailto:[email@domain.com]">[email@domain.com]</a>
+            </div>
+
+            <div class="contact-method">
+              <h4 style="margin-bottom: 0.5rem;">Téléphone</h4>
+              <a href="tel:+33XXXXXXXXX">+33 X XX XX XX XX</a>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Lun-Ven, 9h-18h</p>
+            </div>
+
+            <div class="contact-method">
+              <h4 style="margin-bottom: 0.5rem;">Instagram</h4>
+              <a href="https://instagram.com/studiohrodanien" target="_blank">@studiohrodanien</a>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem;">Messages directs ouverts</p>
+            </div>
+
+            <div class="contact-method">
+              <h4 style="margin-bottom: 0.5rem;">Localisation</h4>
+              <p>Vienne (38200), France</p>
+              <p style="font-size: 0.9rem;">Disponible pour les rencontres locales (Vienne, Lyon)</p>
+            </div>
+
+            <div style="margin-top: var(--spacing-2xl); padding-top: var(--spacing-xl); border-top: 1px solid var(--color-gold);">
+              <p style="font-style: italic; color: var(--color-creme-dark);">Vous préférez appeler ? C'est l'approche la plus rapide pour discuter de votre projet en détail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQS -->
+    <section>
+      <div class="container">
+        <h2>Questions Fréquentes</h2>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Combien coûte un site ?</h3>
+            <p>Ça dépend de votre projet, sa complexité, ses fonctionnalités. On propose des devis sur-mesure après une découverte. <a href="tarifs.html">Voir les tarifs →</a></p>
+          </div>
+          <div class="card">
+            <h3>Combien de temps ?</h3>
+            <p>De 2 à 12 semaines selon la complexité. Un site simple, c'est 2-4 semaines. Un e-commerce, 8-12 semaines.</p>
+          </div>
+          <div class="card">
+            <h3>On peut changer après ?</h3>
+            <p>Oui. On livre du code propre et maintenable. Vous pouvez le modifier vous-même ou on s'en charge.</p>
+          </div>
+          <div class="card">
+            <h3>Vous faites du SEO ?</h3>
+            <p>Oui. Chaque site est optimisé dès le départ pour Google. On pense SEO pendant le design et le développement.</p>
+          </div>
+          <div class="card">
+            <h3>Et le domaine / l'hébergement ?</h3>
+            <p>Vous gardez le contrôle. C'est vous qui gérez domaine et hébergement (ou on peut vous aider à choisir).</p>
+          </div>
+          <div class="card">
+            <h3>Vous offrez du support après ?</h3>
+            <p>Oui. Support technique inclus pendant 3 mois. Support étendu disponible à la carte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS STEPS -->
+    <section>
+      <div class="container">
+        <h2>Prochaines Étapes</h2>
+        <ol style="max-width: 600px; margin: 0 auto; font-size: 1.1rem; line-height: 2;">
+          <li><strong>Vous remplissez le formulaire</strong> (ci-dessus)</li>
+          <li><strong>On examine votre projet</strong> (24-48h)</li>
+          <li><strong>On vous appelle</strong> pour une première discussion</li>
+          <li><strong>On crée un devis personnalisé</strong> basé sur vos besoins</li>
+          <li><strong>Si vous êtes d'accord</strong>, on commençe l'atelier de découverte</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Studio Rhôdanien</h3>
+        <p>Sites web hand-coded pour professionnels et petites entreprises.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens</h3>
+        <ul style="list-style: none;">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="process.html">Notre Procédé</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> [email@domain.com]</p>
+        <p><strong>Tél:</strong> [+33 X XX XX XX XX]</p>
+        <p><strong>Lieu:</strong> Vienne, France</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux</h3>
+        <ul style="list-style: none;">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Studio Rhôdanien. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="cgu.html">CGU</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

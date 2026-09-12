@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Procédé - Studio Rhôdanien</title>
+  <meta name="description" content="Comment on fonctionne pour créer votre site web. Un processus transparent et collaboratif.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .process-timeline {
+      position: relative;
+      padding: var(--spacing-2xl) 0;
+    }
+
+    .timeline-step {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: var(--spacing-2xl);
+      margin-bottom: var(--spacing-2xl);
+      position: relative;
+    }
+
+    .timeline-number {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      color: var(--color-gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .timeline-content {
+      border-left: 3px solid var(--color-gold);
+      padding-left: var(--spacing-lg);
+    }
+
+    .timeline-content h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-step {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-content {
+        border-left: none;
+        border-top: 3px solid var(--color-gold);
+        padding-left: 0;
+        padding-top: var(--spacing-lg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Studio Rhôdanien</div>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="process.html">Notre Procédé</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Notre Procédé</h1>
+        <p>Comment on collabore pour créer votre site web sur mesure</p>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section>
+      <div class="container">
+        <h2>Un processus transparent et collaboratif</h2>
+        <p>On croit à la collaboration. Votre site, c'est une conversation entre nous et vous. Chaque étape, c'est une occasion d'aligner nos visions.</p>
+      </div>
+    </section>
+
+    <!-- TIMELINE PROCESSUS -->
+    <section>
+      <div class="container">
+        <div class="process-timeline">
+          <!-- Étape 1 -->
+          <div class="timeline-step">
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+              <h3>Découverte & Stratégie</h3>
+              <p>On commence par comprendre. Votre métier, vos clients, vos objectifs. On discute de vos défis, vos opportunités, ce qui vous rend unique.</p>
+              <ul style="margin-top: var(--spacing-md);">
+                <li>Atelier de découverte (1-2h)</li>
+                <li>Analyse de votre marché</li>
+                <li>Définition des objectifs du site</li>
+                <li>Création d'une stratégie de contenu</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="timeline-step">
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+              <h3>Design & Structure</h3>
+              <p>On crée un design 100% custom, pensé pour votre marque et vos objectifs de conversion. Pas de templates, pas de stock. Du sur-mesure.</p>
+              <ul style="margin-top: var(--spacing-md);">
+                <li>Wireframes et structure</li>
+                <li>Design des pages clés</li>
+                <li>Révisions illimitées</li>
+                <li>Approbation finale</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="timeline-step">
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+              <h3>Développement</h3>
+              <p>Code propre, performant, sémantique. Hand-coded HTML/CSS/JS. Aucune dépendance inutile. Optimisé pour la vitesse et le SEO.</p>
+              <ul style="margin-top: var(--spacing-md);">
+                <li>Développement du front-end</li>
+                <li>Intégrations (formulaires, analytics, etc.)</li>
+                <li>Tests de compatibilité</li>
+                <li>Optimisations de perfs</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Étape 4 -->
+          <div class="timeline-step">
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+              <h3>Lancement</h3>
+              <p>On déploie votre site sur votre serveur. Tests finaux, vérifications, configurations. Vous êtes en live.</p>
+              <ul style="margin-top: var(--spacing-md);">
+                <li>Configuration du serveur</li>
+                <li>Déploiement</li>
+                <li>Tests de fonctionnement</li>
+                <li>Formation (si besoin)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Étape 5 -->
+          <div class="timeline-step">
+            <div class="timeline-number">5</div>
+            <div class="timeline-content">
+              <h3>Support & Optimisation</h3>
+              <p>Le travail ne s'arrête pas au lancement. On mesure les résultats, on optimise, on s'adapte à vos besoins.</p>
+              <ul style="margin-top: var(--spacing-md);">
+                <li>Support technique</li>
+                <li>Mises à jour</li>
+                <li>Analyses de données</li>
+                <li>Optimisations continues</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY HAND-CODED -->
+    <section>
+      <div class="container">
+        <h2>Pourquoi du hand-coded ?</h2>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>⚡ Performance</h3>
+            <p>Pas de bloat, pas d'outils inutiles. Un site plus léger, plus rapide, mieux classé par Google.</p>
+          </div>
+          <div class="card">
+            <h3>🎨 Liberté créative</h3>
+            <p>Aucune limite imposée par un thème. On peut créer exactement ce qu'on imagine, quoi qu'en disent les conventions.</p>
+          </div>
+          <div class="card">
+            <h3>🔧 Maintenabilité</h3>
+            <p>Du code propre et lisible. Facile à modifier, à mettre à jour, à évolver. Pas de dépendances propriétaires.</p>
+          </div>
+          <div class="card">
+            <h3>💰 Coût total</h3>
+            <p>Moins de dépendances, moins de coûts d'infrastructure. Vous gardez le contrôle de votre site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE RÉALISTE -->
+    <section>
+      <div class="container">
+        <h2>Combien de temps ?</h2>
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Site simple</h3>
+            <p><strong>2-4 semaines</strong></p>
+            <p style="font-size: 0.9rem;">Landing page, portfolio basique, site vitrine.</p>
+          </div>
+          <div class="card">
+            <h3>Site interactif</h3>
+            <p><strong>4-8 semaines</strong></p>
+            <p style="font-size: 0.9rem;">Fonctionnalités custom, intégrations, formulaires complexes.</p>
+          </div>
+          <div class="card">
+            <h3>E-commerce</h3>
+            <p><strong>8-12 semaines</strong></p>
+            <p style="font-size: 0.9rem;">Catalogue produits, panier, paiements, gestion d'inventaire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLABORATION -->
+    <section>
+      <div class="container">
+        <h2>Ce qu'on vous demande</h2>
+        <div class="grid grid-2">
+          <div>
+            <h3>📝 Du contenu</h3>
+            <p>Textes, images, infos produits. On peut vous aider à structurer, mais le contenu vient de vous.</p>
+          </div>
+          <div>
+            <h3>⏰ Du temps</h3>
+            <p>Quelques heures pour les atelier de découverte, révisions, approbations. Flexible, on s'adapte.</p>
+          </div>
+          <div>
+            <h3>🎯 Une vision claire</h3>
+            <p>Qu'est-ce que vous voulez accomplir ? Qui sont vos clients ? Qu'est-ce qu'ils font sur votre site ?</p>
+          </div>
+          <div>
+            <h3>💬 Du feedback</h3>
+            <p>On itère ensemble. Vos retours nous permettent d'affiner jusqu'à la perfection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2>Prêt à commencer ?</h2>
+        <p>Parlons de votre projet et de comment on peut vous aider.</p>
+        <div class="cta-section">
+          <a href="contact.html" class="btn btn-primary">Planifier une découverte</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Studio Rhôdanien</h3>
+        <p>Sites web hand-coded pour professionnels et petites entreprises.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens</h3>
+        <ul style="list-style: none;">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="process.html">Notre Procédé</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> [email@domain.com]</p>
+        <p><strong>Tél:</strong> [+33 X XX XX XX XX]</p>
+        <p><strong>Lieu:</strong> Vienne, France</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux</h3>
+        <ul style="list-style: none;">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Studio Rhôdanien. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="cgu.html">CGU</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Rhôdanien - Sites Web Personnalisés pour Professionnels</title>
+  <meta name="description" content="Créez votre site web sur mesure. Design custom, perfs optimales, zéro template.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(75, 15, 30, 0.6);
+      z-index: 1;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 1;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .hero video.fade-out {
+      opacity: 0;
+    }
+
+    @keyframes videoFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .hero video.fade-in {
+      animation: videoFadeIn 0.8s ease-in-out;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- LOADER ANIMATION -->
+  <div class="loader-screen" id="loaderScreen">
+    <svg class="signature-svg" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <style>
+          @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        </style>
+      </defs>
+      <g id="signaturePath">
+        <text
+          x="50%"
+          y="55%"
+          font-family="Great Vibes"
+          font-size="72"
+          fill="none"
+          stroke="#C98C49"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          class="signature-text">
+          Studio Rhôdanien
+        </text>
+      </g>
+    </svg>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    .loader-screen {
+      position: fixed;
+      inset: 0;
+      background: #4B0F1E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    .signature-svg {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+    }
+
+    .signature-text {
+      animation: writeSignature 2s ease-in-out forwards;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    @keyframes writeSignature {
+      0% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        opacity: 1;
+      }
+      85% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+        fill: none;
+        opacity: 1;
+      }
+      100% {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+        fill: #C98C49;
+        opacity: 1;
+      }
+    }
+
+    @keyframes loaderExit {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+
+    .loader-screen.exit {
+      animation: loaderExit 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+    }
+
+    body.loader-active {
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loaderScreen = document.getElementById('loaderScreen');
+      if (!loaderScreen) return;
+
+      document.body.classList.add('loader-active');
+
+      setTimeout(() => {
+        loaderScreen.classList.add('exit');
+        setTimeout(() => {
+          loaderScreen.remove();
+          document.body.classList.remove('loader-active');
+        }, 800);
+      }, 2500);
+
+      function skipLoader() {
+        loaderScreen.classList.add('exit');
+        setTimeout(() => {
+          loaderScreen.remove();
+          document.body.classList.remove('loader-active');
+        }, 800);
+      }
+
+      document.addEventListener('click', skipLoader, { once: true });
+      document.addEventListener('wheel', skipLoader, { once: true });
+      document.addEventListener('touchmove', skipLoader, { once: true });
+    });
+
+    // Carrousel vidéos avec transition
+    document.addEventListener('DOMContentLoaded', function() {
+      const videoElement = document.getElementById('videoHero');
+      if (!videoElement) return;
+
+      const videos = [
+        'assets/videos/video1.mp4',
+        'assets/videos/video2.mp4',
+        'assets/videos/video3.mp4'
+      ];
+
+      let currentVideoIndex = 0;
+
+      function playNextVideo() {
+        videoElement.classList.remove('fade-in');
+        videoElement.src = videos[currentVideoIndex];
+        videoElement.play();
+        videoElement.classList.add('fade-in');
+      }
+
+      videoElement.addEventListener('ended', function() {
+        videoElement.classList.add('fade-out');
+
+        setTimeout(() => {
+          currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+          videoElement.classList.remove('fade-out');
+          playNextVideo();
+        }, 800);
+      });
+
+      playNextVideo();
+    });
+  </script>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+          <path d="M 80 60 Q 60 60 60 80 Q 60 100 80 100 L 110 100 Q 130 100 130 80" fill="none" stroke="#C98C49" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 110 100 Q 145 100 160 70 L 185 30" fill="none" stroke="#C98C49" stroke-width="11" stroke-linecap="round"/>
+          <path d="M 185 30 L 170 45 M 185 30 L 195 38" stroke="#C98C49" stroke-width="11" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span>Studio Rhôdanien</span>
+      </div>
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="process.html">Notre Procédé</a></li>
+        <li><a href="tarifs.html">Tarifs</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <video id="videoHero" autoplay muted playsinline>
+        <source src="assets/videos/video1.mp4" type="video/mp4">
+      </video>
+      <div class="container">
+        <h1>Votre Site Web<br>Sur Mesure</h1>
+        <p>Des sites web hand-coded, performants et pensés pour convertir. Pas de templates. Pas de WordPress. Juste du custom.</p>
+        <div class="cta-section">
+          <a href="contact.html" class="btn btn-primary">Discuter de mon projet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPOSITION DE VALEUR -->
+    <section>
+      <div class="container">
+        <h2>Pourquoi Studio Rhôdanien ?</h2>
+        <div class="grid grid-3">
+          <div class="feature">
+            <div class="feature-icon">🤝</div>
+            <div>
+              <h3>Service Client Efficace</h3>
+              <p>On est à l'écoute et réactif. Vos demandes sont notre priorité. Un vrai partenaire, pas juste un prestataire.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🎯</div>
+            <div>
+              <h3>Sur Mesure</h3>
+              <p>Votre site correspond exactement à vos besoins. Pas de compromis. Du design à la fonctionnalité, tout est pensé pour vous.</p>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📈</div>
+            <div>
+              <h3>Conseils pour Vendre Plus</h3>
+              <p>On optimise votre site pour générer des résultats. Conversions, SEO, UX... on vous aide à gagner en chiffre d'affaires.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO VEDETTE -->
+    <section>
+      <div class="container">
+        <h2>Nos Meilleurs Projets</h2>
+        <p>Quelques exemples de sites qu'on a créés. <a href="portfolio.html">Voir tous nos projets →</a></p>
+
+        <div class="portfolio-grid" style="margin-top: var(--spacing-xl);">
+          <!-- Projet 1 -->
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+1" alt="Projet 1">
+            <div class="portfolio-overlay">
+              <h3>[Nom du projet]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=1" class="btn">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 2 -->
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+2" alt="Projet 2">
+            <div class="portfolio-overlay">
+              <h3>[Nom du projet]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=2" class="btn">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 3 -->
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+3" alt="Projet 3">
+            <div class="portfolio-overlay">
+              <h3>[Nom du projet]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=3" class="btn">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+4" alt="Projet 4">
+            <div class="portfolio-overlay">
+              <h3>[Nom du projet]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=4" class="btn">Voir le projet</a>
+            </div>
+          </div>
+
+          <!-- Projet 5 -->
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/400x400?text=Projet+5" alt="Projet 5">
+            <div class="portfolio-overlay">
+              <h3>[Nom du projet]</h3>
+              <p>[Catégorie]</p>
+              <a href="portfolio-detail.html?id=5" class="btn">Voir le projet</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <a href="portfolio.html" class="btn">Voir tous nos projets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF / CHIFFRES -->
+    <section>
+      <div class="container">
+        <h2>Ce Que Nos Clients Disent</h2>
+        <div class="grid grid-2">
+          <div class="testimonial">
+            <p>"Le site qu'on a créé ensemble a doublé nos demandes en 3 mois. Vraiment impressionné par la qualité et la rapidité."</p>
+            <div class="testimonial-author">— [Nom Client], [Entreprise]</div>
+          </div>
+          <div class="testimonial">
+            <p>"On cherchait quelque chose de vraiment unique, pas un énième site WordPress. C'est exactement ce qu'on a eu."</p>
+            <div class="testimonial-author">— [Nom Client], [Entreprise]</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section>
+      <div class="container">
+        <h2>Comment On Fonctionne</h2>
+        <p>Un processus simple et transparent pour créer votre site.</p>
+
+        <div class="grid grid-3" style="margin-top: var(--spacing-xl);">
+          <div class="card">
+            <h3>1. Découverte</h3>
+            <p>On discute de votre projet, vos objectifs, votre audience. On comprend votre métier.</p>
+          </div>
+          <div class="card">
+            <h3>2. Design</h3>
+            <p>Création d'un design sur mesure, unique à votre marque. Révisions jusqu'à satisfaction.</p>
+          </div>
+          <div class="card">
+            <h3>3. Développement</h3>
+            <p>Code propre et performant. Responsive, optimisé SEO, prêt à convertir.</p>
+          </div>
+          <div class="card">
+            <h3>4. Lancement</h3>
+            <p>Déploiement sur votre serveur. Tests finaux. Vous êtes en live.</p>
+          </div>
+          <div class="card">
+            <h3>5. Support</h3>
+            <p>On reste disponible pour les mises à jour et les ajustements.</p>
+          </div>
+          <div class="card">
+            <h3>6. Croissance</h3>
+            <p>Optimisations continues basées sur les données et vos retours.</p>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <a href="process.html" class="btn">En savoir plus sur notre procédé</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section>
+      <div class="container" style="text-align: center;">
+        <h2>Prêt à transformer votre présence en ligne ?</h2>
+        <p>Discutons de ce qu'on peut créer ensemble.</p>
+        <div class="cta-section">
+          <a href="contact.html" class="btn btn-primary">Commençons</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Studio Rhôdanien</h3>
+        <p>Sites web hand-coded pour professionnels et petites entreprises.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Liens</h3>
+        <ul style="list-style: none;">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="process.html">Notre Procédé</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="charte-graphique.html">Charte Graphique</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p><strong>Email:</strong> [email@domain.com]</p>
+        <p><strong>Tél:</strong> [+33 X XX XX XX XX]</p>
+        <p><strong>Lieu:</strong> Vienne, France</p>
+      </div>
+      <div class="footer-section">
+        <h3>Réseaux</h3>
+        <ul style="list-style: none;">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Studio Rhôdanien. Tous droits réservés. | <a href="mentions-legales.html">Mentions Légales</a> | <a href="cgu.html">CGU</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
